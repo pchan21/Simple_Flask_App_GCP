@@ -9,7 +9,7 @@ app= Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    data = ['Moteur', 'Modele', 'Consommation']
+    data = ['Moteur', 'Modele', 'Consommation',"Crit'Air"]
     return render_template('home.html', data=data)
 	#name = os.environ.get("NAME", "World")
 	#return "Hello {}! This is our first application.".format(name)
