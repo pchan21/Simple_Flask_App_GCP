@@ -10,6 +10,7 @@ COPY . ./
 #RUN pip install Flask gunicorn Jinja2 numpy
 RUN apt-get update && apt-get -y install sudo
 
+RUN sudo pip3 install pickle5
 RUN pip install -r requirements.txt
 RUN pip install -U scikit-learn
 
