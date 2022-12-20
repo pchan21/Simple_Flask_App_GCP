@@ -1,60 +1,37 @@
 <!DOCTYPE html>
 <html >
-
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
-  <title>Estime le Prix de ta Voiture d'Occasion</title>
   <meta charset="UTF-8">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> 
-  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'> 
-  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <title>ML API</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
-
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
 </head>
-  <div class="scroll-container">
-    <body>
-    <div class="login">
-      <h1> Paramètres Voiture</h1>
-        <!-- Problème lié au formulaire -->
-        <!-- Main Input For Receiving Query to our ML -->
-        <form action="{{ url_for('predict')}}"method="post">
-            {% for element in data_name_input %}
-              {% if element == "Crit'Air" %}
-                <input type="text" name="{{element}}" list="{{element}}" placeholder="{{element}}" required="required" /><br>
-                <datalist id="{{element}}">
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                  <option value="4" />
-                  <option value="5" />
-                  <option value="6" />
 
-                </datalist>
-              {% elif element in data_name_encoding %}
-                <input type="text" name="{{element}}" list="{{element}}" placeholder="{{element}}" required="required" /><br>
-              {% else %}
-                <input type="integer" name="{{element}}" placeholder="{{element}}" required="required" /><br>
-              {% endif %}
-              
-              {% if element in data_name_encoding %}
-              
-                <datalist id="{{element}}" aria-required="true">
-                {% for option in data_values_encoding[element] %}
-                  <option value="{{option}}" />
-                {% endfor %}
-                </datalist>
-              {% endif %}
-            {% endfor %}
-            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-        </form>
-    </div>
-    {{prediction_text}}
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    </body>
-  </div>
+<body>
+ <div class="login">
+	<h1>Halo Alo</h1>
+    <!-- Problème lié au formulaire -->
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+        {% for element in data_name_input %}
+          <input type="text" name="{{element}}" placeholder="{{element}}" required="required" /><br>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
 </html>
