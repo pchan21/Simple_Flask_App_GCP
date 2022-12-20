@@ -3,7 +3,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import numpy as np
-#import pandas as pd
+import pandas as pd
 # à tester
 #import pickle
 app= Flask(__name__)
