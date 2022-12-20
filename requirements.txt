@@ -4,6 +4,5 @@ Jinja2
 numpy
 bs4
 requests
-pickle5
+#pickle5
 #datetime
-#time
