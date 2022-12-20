@@ -1,15 +1,12 @@
-import requests
 from bs4 import BeautifulSoup
+from datetime import date
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import requests
-from bs4 import BeautifulSoup
 import time
-from datetime import date
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsRegressor
-import pickle
+import requests
+
+
 today = date.today()
 # On récupère les paramètres dont on a besoin
 nber_annunces_per_page = 16

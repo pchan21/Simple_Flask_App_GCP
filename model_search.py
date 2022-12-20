@@ -1,16 +1,12 @@
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import requests
-from bs4 import BeautifulSoup
-import time
-from datetime import date
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsRegressor
-import pickle
-today = date.today()
 from sklearn.linear_model import LinearRegression
+import pandas as pd
+from datetime import date
+import pickle
 
+
+today = date.today()
 #loaded_model = pickle.load(open(filename, 'rb'))
 
 X_train = pd.read_csv('Data/X_train.csv')
