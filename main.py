@@ -11,21 +11,14 @@ app= Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    data_values_encoding = pickle.load(open('Values_Input/dict_specific_values.pickle','rb'))
-    data_name_input = pickle.load(open('Entrees/list_input.pickle','rb'))
-    data_name_encoding = pickle.load(open('Entrees/list_input_encoding.pickle','rb'))
-    Dataframe = pd.read_csv('Data/X_train.csv', index_col=False)
-    Dataframe = Dataframe.drop(['Unnamed: 0.1', 'Unnamed: 0'], axis=1)
-    return render_template('home.html', data_values_encoding=data_values_encoding, data_name_input=data_name_input,data_name_encoding=data_name_encoding)
- 
-    #today = date.today()
+    today = date.today()
     #data = ['Moteur', 'Modele', 'Consommation',"Crit'Air"]
-    #data_values_encoding = pickle.load(open('Values_Input/dict_specific_values.pickle','rb'))
-    #data = pickle.load(open('Entrees/list_input.pickle','rb'))
-    #data_name_encoding = pickle.load(open('Entrees/list_input_encoding.pickle','rb'))
+    data_values_encoding = pickle.load(open('Values_Input/dict_specific_values.pickle','rb'))
+    data = pickle.load(open('Entrees/list_input.pickle','rb'))
+    data_name_encoding = pickle.load(open('Entrees/list_input_encoding.pickle','rb'))
     #Dataframe = pd.read_csv('Data/X_train.csv', index_col=False)
     #Dataframe = Dataframe.drop(['Unnamed: 0.1', 'Unnamed: 0'], axis=1)
-    #return render_template('home.html', data=data)
+    return render_template('home.html', data=data)
 	#name = os.environ.get("NAME", "World")
 	#return "Hello {}! This is our first application.".format(name)
 
