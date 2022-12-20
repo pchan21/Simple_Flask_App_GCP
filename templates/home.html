@@ -24,7 +24,7 @@
         <input type="text" name="interview_score5" placeholder="Average Temperature" required="required" /><br>
         <input type="text" name="interview_score6" placeholder="Average Wind Speed" required="required" /><br>
 
-        {% for element in data %}
+        {% for element in data_name_input %}
           <input type="text" name="{{element}}" placeholder="{{element}}" required="required" /><br>
         {% endfor %}
 
