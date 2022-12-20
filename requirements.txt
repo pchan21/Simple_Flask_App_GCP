@@ -1,5 +1,6 @@
 Flask 
-gunicorn 
+gunicorn
+pandas
 Jinja2 
 numpy
 bs4
