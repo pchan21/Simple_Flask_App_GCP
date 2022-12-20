@@ -32,7 +32,7 @@
 
                 </datalist>
               {% elif element in dict_units_input.keys() %}
-                <input type="text" name="{{element}}" list="{{element}}" placeholder="{{element}} {{dict_units_input[{{element}}]}}" required="required" /><br>
+                <input type="text" name="{{element}}" list="{{element}}" placeholder="{{element}} en {{dict_units_input[element]}}" required="required" /><br>
           
               {% elif element in data_name_encoding %}
                 <input type="text" name="{{element}}" list="{{element}}" placeholder="{{element}}" required="required" /><br>
