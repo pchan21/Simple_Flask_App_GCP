@@ -16,7 +16,7 @@ def hello_world():
     data_name_encoding = pickle.load(open(f'Entrees/list_input_encoding.pickle','rb'))
     Dataframe = pd.read_csv('Data/X_train.csv', index_col=False)
     Dataframe = Dataframe.drop(['Unnamed: 0.1', 'Unnamed: 0'], axis=1)
-    return render_template('home.html', data_values_encoding=data_values_encoding, data_name_input=data_name_input,data_name_encoding=data_name_encoding)
+    return render_template('home.html', data_name_input=data_name_input) #data_values_encoding=data_values_encoding,data_name_encoding=data_name_encoding)
 	
 	
 @app.route('/predict',methods = ['POST'])
