@@ -3,7 +3,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import numpy as np
-import pandas as pd
+#import pandas as pd
 # à tester
 #import pickle
 app= Flask(__name__)
@@ -16,7 +16,7 @@ def hello_world():
     #data_name_encoding = pickle.load(open('Entrees/list_input_encoding.pickle','rb'))
     #Dataframe = pd.read_csv('Data/X_train.csv', index_col=False)
     #Dataframe = Dataframe.drop(['Unnamed: 0.1', 'Unnamed: 0'], axis=1)
-    return render_template('home.html', data = data)
+    return render_template('home.html', data=data)
 	#name = os.environ.get("NAME", "World")
 	#return "Hello {}! This is our first application.".format(name)
 
