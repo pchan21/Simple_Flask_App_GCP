@@ -59,7 +59,7 @@ def predict():
     #print(prediction[0])
     #prediction = [0.32]
    #print(model.predict(x_predict)[0][0])
-   prediction = model.predict(x_predict)[0][0]
+   prediction = 30000#model.predict(x_predict)[0][0]
    #print(prediction)
    #output = round(prediction[0], 2)
    if prediction < 0:
