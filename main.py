@@ -9,7 +9,8 @@ app= Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    data = ['Moteur', 'Modele', 'Consommation',"Crit'Air"]
+    #data = ['Moteur', 'Modele', 'Consommation',"Crit'Air"]
+    data = pickle.load(open(f'Entrees/list_input.pickle','rb'))
     return render_template('home.html', data=data)
 	#name = os.environ.get("NAME", "World")
 	#return "Hello {}! This is our first application.".format(name)
