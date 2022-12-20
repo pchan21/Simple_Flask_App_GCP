@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 from flask import render_template
+from datetime import date
 from flask import request
 import numpy as np
 import pandas as pd
@@ -8,8 +9,10 @@ import pandas as pd
 import pickle
 app= Flask(__name__)
 
+
 @app.route("/")
 def hello_world():
+    today = date.today()
     #data = ['Moteur', 'Modele', 'Consommation',"Crit'Air"]
     #data_values_encoding = pickle.load(open('Values_Input/dict_specific_values.pickle','rb'))
     data = pickle.load(open('Entrees/list_input.pickle','rb'))
