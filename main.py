@@ -51,10 +51,10 @@ def predict():
     #        else:
     #            dict_input_values[column] = [0]
 
-    x_predict = pd.DataFrame(data=dict_input_values)  
+    #x_predict = pd.DataFrame(data=dict_input_values)  
     #print(x_predict)
-    filename = f'Modele/best_model_{today}.sav'
-    model = pickle.load(open(filename, 'rb'))
+    #filename = f'Modele/best_model_{today}.sav'
+    #model = pickle.load(open(filename, 'rb'))
     #print(dict_input_values['Couleur principale_blanc'])
     #final_features = [np.array(int_features)]
     #prediction = model.predict(final_features)
@@ -65,7 +65,7 @@ def predict():
     #print(prediction)
     #output = round(prediction[0], 2)
     if prediction < 0:
-        answer = "La voiture n'est pas vendable au vue des paramètres rentrés"
+	answer = "La voiture n'est pas vendable au vue des paramètres rentrés"
     else:
         answer = f'La voiture coûtera {prediction} euros'
     return render_template('home.html', prediction_text=answer, data_values_encoding=data_values_encoding, data_name_input=data_name_input,data_name_encoding=data_name_encoding) # prediction[0]
