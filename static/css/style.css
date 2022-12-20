@@ -11,14 +11,14 @@
 
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
 
-html { width: 100%; height:100%; overflow:hidden; }
+html { width: 100%; height:100%; } /* overflow:hidden*/
 
 body { 
 	width: 100%;
 	height:100%;
 	font-family: 'Open Sans', sans-serif;
 	background: #092756;
-	color: #fff;
+	color:#fff;
 	font-size: 18px;
 	text-align:center;
 	letter-spacing:1.2px;
@@ -28,6 +28,7 @@ body {
 	background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
 	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+	scroll-behavior: smooth;
 
 }
 .login { 
@@ -61,3 +62,43 @@ input {
 	transition: box-shadow .5s ease;
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+
+.navbar-link {
+	display: inline-block;
+	margin-bottom: 5000px; /* for demo purpose only */
+	}
+
+a {
+	display: inline-block;
+	width: 50px;
+	text-decoration: none;
+	}
+	
+nav, .scroll-container {
+display: block;
+margin: 0 auto;
+text-align: center;
+}
+	
+nav {
+width: 339px;
+padding: 5px;
+border: 1px solid black;
+}
+
+.scroll-container {
+width: 350px;
+height: 200px;
+overflow-y: scroll;
+scroll-behavior: smooth;
+}
+
+.scroll-page {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100%;
+font-size: 5em;
+}
+	  
