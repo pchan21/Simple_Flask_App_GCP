@@ -17,14 +17,14 @@ soup_page = BeautifulSoup(page_list_annunces, "html.parser")
 tot_nber_ads = soup_page.find_all("h2", {"class":"titleNbAds"})[0]
 tot_nber_ads = tot_nber_ads.find_all('span', {"class":"numAnn"})[0].get_text().replace('\xa0','')
 nber_web_page = round(int(tot_nber_ads) / nber_annunces_per_page) + 1
-nber_web_page = 100
+nber_web_page = 10
 list_name_car_in_url = ['PEUGEOT','RENAULT','VOLKSWAGEN','MERCEDES', 'CITROEN']
 # Pour RENAULT On a les données de PEUGEOT à supprimer
 
 # lancement à 17h30 du code
 # On parcourt les pages web des annonces
 # for car_mark in list_name_car_in_url:
-for mark in ['RENAULT','VOLKSWAGEN','MERCEDES', 'CITROEN']:
+for mark in list_name_car_in_url:
   list_rows_annunces = []
   for i in range (1,nber_web_page+1):
     time.sleep(1.5)
@@ -35,7 +35,7 @@ for mark in ['RENAULT','VOLKSWAGEN','MERCEDES', 'CITROEN']:
     if statuscodeannunces == 200:
       soup_page = BeautifulSoup(page_list_annunces, "html.parser")
       # On parcourt les annonces puis..
-      list_annunces = soup_page.find_all('div',{"class":"resultList mB15 hiddenOverflow listing "})[0]
+      list_annunces = soup_page.find_all('div',{"class":"resultList mB15 hiddenOverflow listing"})[0]
       for annunces in list_annunces.find_all('div', {"class": "adLineContainer"}):
         json_row = {}
         if annunces.find_all('a') != []:
@@ -92,3 +92,4 @@ for mark in ['RENAULT','VOLKSWAGEN','MERCEDES', 'CITROEN']:
           "Crit'Air", 'Émissions de CO2', 'Consommation mixte', 'Norme Euro']]
   Data_Bilan.to_csv(f'Data_Site_Centrale/Data_{mark}_{today}.csv')
   time.sleep(10)
+
