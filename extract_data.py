@@ -17,7 +17,7 @@ soup_page = BeautifulSoup(page_list_annunces, "html.parser")
 tot_nber_ads = soup_page.find_all("h2", {"class":"titleNbAds"})[0]
 tot_nber_ads = tot_nber_ads.find_all('span', {"class":"numAnn"})[0].get_text().replace('\xa0','')
 nber_web_page = round(int(tot_nber_ads) / nber_annunces_per_page) + 1
-nber_web_page = 10
+nber_web_page = 100
 list_name_car_in_url = ['PEUGEOT','RENAULT','VOLKSWAGEN','MERCEDES', 'CITROEN']
 # Pour RENAULT On a les données de PEUGEOT à supprimer
 
