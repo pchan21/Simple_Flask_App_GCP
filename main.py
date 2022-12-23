@@ -18,7 +18,8 @@ def hello_world():
     data_name_encoding = pickle.load(open(f'Entrees/list_input_encoding.pickle','rb'))
     Dataframe = pd.read_csv('Data/X_train.csv', index_col=False)
     Dataframe = Dataframe.drop(['Unnamed: 0.1', 'Unnamed: 0'], axis=1)
-    return render_template('home.html', data_name_input=data_name_input,data_values_encoding=data_values_encoding,data_name_encoding=data_name_encoding, dict_units_input=dict_units_input)
+    score = pickle.load(open('Modele/best_model_score.txt', 'rb'))
+    return render_template('home.html', score=score, data_name_input=data_name_input,data_values_encoding=data_values_encoding,data_name_encoding=data_name_encoding, dict_units_input=dict_units_input)
 	
 	
 @app.route('/predict',methods = ['POST'])
@@ -28,7 +29,7 @@ def predict():
     data_name_encoding = pickle.load(open(f'Entrees/list_input_encoding.pickle','rb'))
     Dataframe = pd.read_csv('Data/X_train.csv', index_col=False)
     Dataframe = Dataframe.drop(['Unnamed: 0.1', 'Unnamed: 0'], axis=1)
-
+    score = pickle.load(open('Modele/best_model_score.txt', 'rb'))
     dict_input_values = {}
     # On parcourt les colonnes pour les avoir dans l'ordre
     for column in Dataframe.columns:
@@ -57,7 +58,7 @@ def predict():
         answer = "La voiture n'est pas vendable au vue des paramètres rentrés"
     else:
         answer = f'La voiture coûtera {prediction} euros'
-    return render_template('home.html', prediction_text=answer, data_values_encoding=data_values_encoding, data_name_input=data_name_input,data_name_encoding=data_name_encoding, dict_units_input=dict_units_input) # prediction[0]
+    return render_template('home.html', score=score,prediction_text=answer, data_values_encoding=data_values_encoding, data_name_input=data_name_input,data_name_encoding=data_name_encoding, dict_units_input=dict_units_input) # prediction[0]
 
     #int_features = [float(x) for x in request.form.values()]
     #final_features = [np.array(int_features)]
