@@ -137,8 +137,8 @@ liste_entree = ['Dpt', 'Année', 'Kilométrage compteur',
        "Crit'Air", 'Émissions de CO2', 'Consommation mixte', 'Garantie', 'Marque voiture','Contrôle technique','Énergie','Boîte de vitesse', 'Garantie constructeur','Vérifié & Garanti', 'Première main (déclaratif)',
        'Norme Euro','Couleur principale']
 
-pickle.dump(liste_entree, open(f'drive/My Drive/Projet_Personelle_automobile_occasion/Entrees/list_input.pickle', 'wb'))
-pickle.dump(list_encoding, open(f'drive/My Drive/Projet_Personelle_automobile_occasion/Entrees/list_input_encoding.pickle', 'wb'))
+pickle.dump(liste_entree, open('Entrees/list_input.pickle', 'wb'))
+pickle.dump(list_encoding, open('Entrees/list_input_encoding.pickle', 'wb'))
 
 data = pd.get_dummies(data, columns = list_encoding)
 data = data.drop(['Couleur Secondaire'], axis=1)
