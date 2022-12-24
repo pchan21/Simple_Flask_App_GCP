@@ -13,7 +13,9 @@ dict_units_input = {'Émissions de CO2': 'g/km', 'Consommation mixte': 'l/100km'
 
 @app.route("/")
 def hello_world():
-    today = '2022-12-24'
+    with open('Entrees/last_modele_date.txt') as f:
+    	lines = f.readlines()
+    today = lines[0]
     data_values_encoding = pickle.load(open(f'Values_Input/dict_specific_values.pickle','rb'))
     data_name_input = pickle.load(open(f'Entrees/list_input.pickle','rb'))
     data_name_encoding = pickle.load(open(f'Entrees/list_input_encoding.pickle','rb'))
