@@ -48,7 +48,7 @@ def predict():
     #x_predict = pd.DataFrame(data=dict_input_values)  
     #print(x_predict)
     filename = 'Modele/best_model.sav'
-    #model = pickle.load(open(filename, 'rb'))
+    model = pickle.load(open(filename, 'rb'))
     #print(dict_input_values['Couleur principale_blanc'])
     #final_features = [np.array(int_features)]
     #prediction = model.predict(x_predict)
