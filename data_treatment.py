@@ -152,7 +152,8 @@ data = data.drop(['Couleur Secondaire'], axis=1)
 X = data.drop(['Prix'], axis=1)
 y = data[['Prix']]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
+with open('Entrees/last_modele_date.txt', 'w') as f:
+    f.write(today)
 X_train.to_csv(f'Data/X_train_{today}.csv')
 X_test.to_csv(f'Data/X_test_{today}.csv')
 y_train.to_csv(f'Data/y_train_{today}.csv')
