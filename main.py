@@ -32,7 +32,7 @@ def predict():
     data_name_input = pickle.load(open(f'Entrees/list_input.pickle','rb'))
     data_name_encoding = pickle.load(open(f'Entrees/list_input_encoding.pickle','rb'))
     Dataframe = pd.read_csv(f'Data/X_train.csv', index_col=False)
-    Dataframe = Dataframe.drop(['Unnamed: 0'], axis=1) #'Unnamed: 0.1'
+    Dataframe = Dataframe.drop(['Unnamed: 0.1','Unnamed: 0'], axis=1) #
     score = round(float(pickle.load(open('Modele/best_model_score.txt', 'rb'))),2)
     dict_input_values = {}
     # On parcourt les colonnes pour les avoir dans l'ordre
@@ -45,10 +45,10 @@ def predict():
             else:
                 dict_input_values[column] = [0]
 
-    x_predict = pd.DataFrame(data=dict_input_values)  
+    #x_predict = pd.DataFrame(data=dict_input_values)  
     #print(x_predict)
     filename = 'Modele/best_model.sav'
-    model = pickle.load(open(filename, 'rb'))
+    #model = pickle.load(open(filename, 'rb'))
     #print(dict_input_values['Couleur principale_blanc'])
     #final_features = [np.array(int_features)]
     #prediction = model.predict(x_predict)
