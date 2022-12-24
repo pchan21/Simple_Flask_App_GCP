@@ -106,7 +106,7 @@ Dataframe_Global_filter_color['Kilométrage compteur'] = Dataframe_Global_filter
 Dataframe_Global_filter_color['Marque voiture'] = Dataframe_Global_filter_color['Modèle'].apply(lambda x: x[:x.find(' ')].strip())
 Dataframe_Global_filter_color['Modèle'] = Dataframe_Global_filter_color['Modèle'].apply(lambda x: x[x.find(' '):].strip())
 Dataframe_Global_filter_color =  Dataframe_Global_filter_color.drop(['Modèle','Mise en circulation', 'Couleur extérieure', 'Moteur'], axis=1)
-Dataframe_Global_filter_color['Garantite'] = Dataframe_Global_filter_color.loc[Dataframe_Global_filter_color['Garantie'].isna(),'Garantie'] = 0
+Dataframe_Global_filter_color['Garantie'] = Dataframe_Global_filter_color.loc[Dataframe_Global_filter_color['Garantie'].isna(),'Garantie'] = 0
 
 for column in list_column_integer:
   print(column)
