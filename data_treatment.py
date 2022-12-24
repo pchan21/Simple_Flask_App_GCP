@@ -9,6 +9,11 @@ import pickle
 today = date.today()
 
 def delete_digital_letter(word):
+  if type(word) != str:
+    if np.isnan(word):
+      return 'no'
+    else:
+      return str(word)
   new_word = ''
   for letter in word:
     if letter.isdigit() == False:
@@ -51,6 +56,7 @@ for name_car in list_name_car_in_url:
   data = pd.read_csv(f'Data_Site_Centrale/Data_{name_car}_{today}.csv')
   Dataframe_Global = pd.concat([Dataframe_Global, data], axis=0)
 
+Dataframe_Global = Dataframe_Global[~Dataframe_Global['Couleur extérieure'].isna()]
 Dataframe_Global['Couleur extérieure'] = Dataframe_Global['Couleur extérieure'].str.lower()
 Dataframe_Global['Couleur extérieure'] = Dataframe_Global['Couleur extérieure'].apply(lambda x: delete_digital_letter(x))
 Dataframe_Global['Couleur extérieure']  = Dataframe_Global['Couleur extérieure'].apply(lambda x: delete_useless_word(x, list_element_to_delete_beginning_color))
