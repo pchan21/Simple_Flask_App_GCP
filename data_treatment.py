@@ -11,7 +11,7 @@ today = date.today()
 def delete_digital_letter(word):
   if type(word) != str:
     if np.isnan(word):
-      return 'no'
+      return 'inconnu'
     else:
       return str(word)
   new_word = ''
