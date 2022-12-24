@@ -45,13 +45,13 @@ def predict():
             else:
                 dict_input_values[column] = [0]
 
-    #x_predict = pd.DataFrame(data=dict_input_values)  
+    x_predict = pd.DataFrame(data=dict_input_values)  
     #print(x_predict)
     filename = 'Modele/best_model.sav'
     model = pickle.load(open(filename, 'rb'))
     #print(dict_input_values['Couleur principale_blanc'])
     #final_features = [np.array(int_features)]
-    #prediction = model.predict(x_predict)
+    prediction = model.predict(x_predict)
     #print(prediction[0])
     #prediction = [0.32]
     #print(model.predict(x_predict)[0][0])
