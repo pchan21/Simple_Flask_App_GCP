@@ -31,7 +31,7 @@ def predict():
     data_values_encoding = pickle.load(open(f'Values_Input/dict_specific_values.pickle','rb'))
     data_name_input = pickle.load(open(f'Entrees/list_input.pickle','rb'))
     data_name_encoding = pickle.load(open(f'Entrees/list_input_encoding.pickle','rb'))
-    Dataframe = pd.read_csv(f'Data/X_train_{today}.csv', index_col=False)
+    Dataframe = pd.read_csv(f'Data/X_train.csv', index_col=False)
     Dataframe = Dataframe.drop(['Unnamed: 0'], axis=1) #'Unnamed: 0.1'
     score = round(float(pickle.load(open('Modele/best_model_score.txt', 'rb'))),2)
     dict_input_values = {}
