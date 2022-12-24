@@ -17,7 +17,7 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9' # install the python version needed python extract_data.py python data_treatment.py
+          python-version: '3.9' # install the python version needed python data_treatment.py
           
       - name: install python packages
         run: |
@@ -28,6 +28,7 @@ jobs:
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
         run: |
+          python extract_data.py
           python data_treatment.py
           python model_search.py
           
