@@ -6,5 +6,6 @@ numpy
 bs4
 requests
 datetime
+scikit-learn
 #pickle5
 
