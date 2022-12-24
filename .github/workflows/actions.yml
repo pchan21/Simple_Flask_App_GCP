@@ -28,7 +28,6 @@ jobs:
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
         run: |
-          python extract_data.py
           python data_treatment.py
           python model_search.py
           
